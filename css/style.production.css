@@ -16,6 +16,8 @@
 
 :root {
     --keygreen: #000000;
+    --haircolour: #C30026;
+    --white: #FFFFFF;
     --defaultsize: 15px;
     --stdreadingsize: 17.5px;
     --compressedreadingsize: 16px;
@@ -35,6 +37,7 @@
 /***UNIVERSAL***/
 * {
     box-sizing: border-box;
+    user-select: none;
 }
 
 p {
@@ -53,6 +56,8 @@ body {
     max-width: 75vw;
     margin: 50px auto;
     line-height: 125%;
+    cursor: url(https://correcthorsebatterystaple.onrender.com/2100011.png), auto !important;
+    zoom: 1.25;
 }
 
 header {
@@ -218,6 +223,69 @@ th {
     border-radius: 20px;
 }
 
+/***NEW SYSTEM***/
+
+.slideboxleft, .slideboxright {
+    background-color: white;
+    min-height: 30px;
+    width: 60vw;
+    border-radius: 15px;
+    color: var(--keygreen);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.slideboxleft {
+    margin-right: auto;
+}
+
+.slideboxright {
+    margin-left: auto;
+}
+
+.r1, .r2, .r3 {
+    margin-top: 30px;
+}
+
+.r0, .r1, .r2, .r3 {
+    transition: ease-in-out all 0.5s;
+    transition-delay: 0.01s;
+}
+
+.r0 {
+    transform: rotate(-1.25deg);
+}
+
+.r1 {
+    transform: rotate(1.5deg);
+}
+
+.r2 {
+    transform: rotate(-1deg);
+}
+
+.r3 {
+    transform: rotate(1.75deg);
+}
+
+.r0:hover, .r2:hover {
+    transform: rotate(0.5deg);
+    border-width: 3px;
+    color: var(--white);
+    background-color: var(--haircolour);
+}
+
+.r1:hover, .r3:hover {
+    transform: rotate(-0.5deg);
+    border-width: 3px;
+    color: var(--white);
+    background-color: var(--haircolour);
+}
+
 /***INTERACTIVE ELEMENTS (CLICKABLE)***/
 
 .genericbutton, .genericbutton2 {
@@ -322,6 +390,22 @@ th {
     font-size: var(--stdbigheadsize);
     text-transform: uppercase;
     text-align: center;
+}
+
+.bighead:hover {
+    animation: bounce 0.5s infinite;
+    animation-delay: 0.1s;
+}
+
+@keyframes bounce {
+    0%, 33% {
+        transform: rotate(30deg);
+        transform: translateY(3px);
+    }
+    100% {
+        transform: rotate(0);
+        transform: translateY(0);
+    }
 }
 
 .smallhead {
